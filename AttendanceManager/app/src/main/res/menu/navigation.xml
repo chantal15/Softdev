@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_classes"
+        android:icon="@drawable/ic_classes_black_24dp"
+        android:title="@string/title_classes" />
+
+    <item
+        android:id="@+id/navigation_calendar"
+        android:icon="@drawable/ic_attendance_in_black_24dp"
+        android:title="@string/title_attendance" />
+
+    <item
+        android:id="@+id/navigation_reports"
+        android:icon="@drawable/ic_reports_black_24dp"
+        android:title="@string/title_reports" />
+
+    <!--<item-->
+        <!--android:id="@+id/navigation_students"-->
+        <!--android:icon="@drawable/ic_group_black_24dp"-->
+        <!--android:title="@string/title_students" />-->
+
+</menu>
