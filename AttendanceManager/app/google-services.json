@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "65485292291",
+    "firebase_url": "https://attendance-monitoring-sy-8b1ea.firebaseio.com",
+    "project_id": "attendance-monitoring-sy-8b1ea",
+    "storage_bucket": "attendance-monitoring-sy-8b1ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65485292291:android:8292ab5987041c43",
+        "android_client_info": {
+          "package_name": "com.ams.alpha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65485292291-9h9v7hnuvht94rblulmptd9r314u5ps3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5Oi6dlIJHEfTwKwQq7zlRhdufuw9rxh0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65485292291:android:686a932f46ef7abb",
+        "android_client_info": {
+          "package_name": "com.asiapacific.attendancemanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65485292291-td7a16s2kt8ae9h96kv00f2uo0nsfhud.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.asiapacific.attendancemanager",
+            "certificate_hash": "4c899f8072531e78720b65e04d90b6c6cd663ddb"
+          }
+        },
+        {
+          "client_id": "65485292291-9h9v7hnuvht94rblulmptd9r314u5ps3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5Oi6dlIJHEfTwKwQq7zlRhdufuw9rxh0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65485292291-9h9v7hnuvht94rblulmptd9r314u5ps3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
