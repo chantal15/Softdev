@@ -20,5 +20,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-  
+   <Button
+        android:id="@+id/buttonProfessor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#eaeaea"
+        android:fontFamily="@font/muli_extrabold"
+        android:onClick="openProfessorLogin"
+        android:text="Professor"
+        android:textColor="#969696"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 </android.support.constraint.ConstraintLayout>
