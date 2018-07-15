@@ -110,7 +110,17 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="90dp">
 
-           
+           <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewClassList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </LinearLayout>
 
                
 </android.support.constraint.ConstraintLayout>
