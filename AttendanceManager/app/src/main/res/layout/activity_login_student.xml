@@ -30,5 +30,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logoams" />
 
+ <com.google.android.gms.common.SignInButton
+        android:id="@+id/googleSignInButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+    </com.google.android.gms.common.SignInButton>
 
 </android.support.constraint.ConstraintLayout>
