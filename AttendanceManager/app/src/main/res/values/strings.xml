@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AttendanceManager</string>
+    <string name="title_activity_prof_main">ProfMainActivity</string>
+    <string name="title_classes">Classes</string>
+    <string name="title_reports">Reports</string>
+    <string name="title_attendance">Attendance</string>
+    <string name="title_students">Students</string>
+</resources>
