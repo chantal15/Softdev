@@ -29,4 +29,21 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="250dp" />
 
+         <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:background="#00163f"
+        android:fontFamily="@font/muli_extrabold"
+        android:onClick="goToMainActivity"
+        android:text="Login"
+        android:textColor="@android:color/background_light"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
 </android.support.constraint.ConstraintLayout>
