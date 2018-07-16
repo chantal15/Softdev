@@ -132,6 +132,26 @@ public class StudentMainActivity extends AppCompatActivity {
             }
         });
 
+        textViewSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
+                    @Override
+                    public void onResult(@NonNull Status status) {
+                        startActivity(new Intent(StudentMainActivity.this, LoginStudent.class));
+                    }
+                });
+            }
+        });
+
+        displayName = bundle.getString("NAME");
+        emailAddress = bundle.getString("EMAIL");
+
+        student = new Student(displayName, emailAddress, null, null);
+
+        setupUI();
+    }
+
     
     }
 }
