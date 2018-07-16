@@ -38,5 +38,15 @@ public class ClassesAddClass extends AppCompatActivity {
     Button buttonSave ;
 
     CheckBox checkBoxSun, checkBoxMon, checkBoxTues, checkBoxWed, checkBoxThurs, checkBoxFri, checkBoxSat;
+
+    //Firebase Database Instance
+    DatabaseReference mDatabase;
+
+    //Progress Dialog
+    ProgressDialog progressDialog;
+
+    //Bundle
+    Bundle bundle;
+
     }
 }
