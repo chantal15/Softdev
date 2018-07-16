@@ -62,6 +62,41 @@ public class ProfStudentsList extends AppCompatActivity {
 //        ));
 //    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        accessCode = bundle.getString("ACCESS_CODE");
+
+        databaseStudents = FirebaseDatabase.getInstance().getReference("information").child("class").child(accessCode);
+        databaseStudents.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                studentList.clear();
+                for (DataSnapshot studentSnapshot : dataSnapshot.getChildren()) {
+                    Student student = studentSnapshot.getValue(Student.class);
+                    if(student != null) {
+                        studentList.add(student);
+                        //Setting Adapter
+                        studentAdapter = new StudentAdapter(ProfStudentsList.this, studentList);
+                        studentRecyclerView.setAdapter(studentAdapter);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void setupAdapter() {
+        studentAdapter = new StudentAdapter(this, studentList);
+        studentRecyclerView.setAdapter(studentAdapter);
+    }
+}
+
 
 
 
