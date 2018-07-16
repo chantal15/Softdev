@@ -82,9 +82,21 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassViewHol
         notifyItemRangeRemoved(0, size);
     }
 
+    public class ClassViewHolder extends RecyclerView.ViewHolder{
 
+        TextView textViewClassName, textViewAccessCode, textViewSchedule;
 
-         
+        CardView cardViewContainer;
+
+        public ClassViewHolder(View itemView) {
+            super(itemView);
+
+            textViewClassName = itemView.findViewById(R.id.textViewClassName);
+            textViewAccessCode = itemView.findViewById(R.id.textViewAccessCode);
+            textViewSchedule = itemView.findViewById(R.id.textViewSchedule);
+
+            cardViewContainer = itemView.findViewById(R.id.cardViewContainer);
+
         }
     }
 }
