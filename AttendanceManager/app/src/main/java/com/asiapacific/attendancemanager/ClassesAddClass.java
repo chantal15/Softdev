@@ -156,6 +156,23 @@ public class ClassesAddClass extends AppCompatActivity {
             }
         };
 
+         buttonSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveUserInformation();
+                showProgressDialog();
+            }
+        });
+
+        bundle = getIntent().getExtras();
+        if(bundle != null) {
+            textViewAddClassTitle.setText("Edit Class");
+            populateViews();
+        } else {
+            textViewAddClassTitle.setText("Add Class");
+        }
+    }
+
 
     }
 }
