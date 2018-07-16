@@ -41,6 +41,39 @@ public class LoginStudent extends AppCompatActivity implements View.OnClickListe
         googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this, this).addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions).build();
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.googleSignInButton:
+                signInToGoogle();
+            break;
+        }
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
+
+    private void signInToGoogle() {
+        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+        startActivityForResult(signInIntent, REQ_CODE);
+    }
+
+    private void holdGoogleResult(GoogleSignInResult googleSignInResult) {
+        if(googleSignInResult.isSuccess()) {
+            GoogleSignInAccount googleAccount = googleSignInResult.getSignInAccount();
+            String name = googleAccount.getDisplayName();
+            String email = googleAccount.getEmail();
+
+            Intent intent = new Intent(this, StudentMainActivity.class);
+            intent.putExtra("NAME",name);
+            intent.putExtra("EMAIL",email);
+
+            startActivity(intent);
+        }
+    }
+
 
         }
     }
