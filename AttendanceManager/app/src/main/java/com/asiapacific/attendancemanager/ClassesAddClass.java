@@ -85,6 +85,12 @@ public class ClassesAddClass extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //This will return current date informations.
+                Calendar calendar = Calendar.getInstance();
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+
 
     }
 }
