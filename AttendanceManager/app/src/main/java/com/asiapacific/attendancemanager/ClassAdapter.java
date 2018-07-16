@@ -61,6 +61,27 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassViewHol
             }
         });
 
+        holder.cardViewContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ProfStudentsList.class);
+                intent.putExtra("ACCESS_CODE", myClass.getAccessCode());
+                context.startActivity(intent);
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return classList.size();
+    }
+
+    public void clear() {
+        final int size = classList.size();
+        classList.clear();
+        notifyItemRangeRemoved(0, size);
+    }
+
 
 
          
