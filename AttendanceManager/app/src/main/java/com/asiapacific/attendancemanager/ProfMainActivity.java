@@ -33,6 +33,24 @@ public class ProfMainActivity extends AppCompatActivity implements BottomNavigat
         return false;
     }
 
-   
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
+
+        switch (item.getItemId()) {
+            case R.id.navigation_classes:
+                fragment = new FragmentProfClasses();
+                break;
+            case R.id.navigation_calendar:
+                fragment = new FragmentProfAttendance();
+                break;
+            case R.id.navigation_reports:
+                fragment = new FragmentProfReports();
+                break;
+//            case R.id.navigation_students:
+//                fragment = new FragmentProfStudents();
+//                break;
+        }
+        return loadFragment(fragment);
     }
 }
