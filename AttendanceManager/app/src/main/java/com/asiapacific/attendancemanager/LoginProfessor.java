@@ -21,6 +21,14 @@ public class LoginProfessor extends AppCompatActivity {
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
     }
 
+    public void goToMainActivity(View view) {
+//        if(authenticated()) {
+            //This will open Professor's activity activity.
+            Intent intent = new Intent(this, ProfMainActivity.class);
+            startActivity(intent);
+//        }
+    }
+
  
     }
 }
