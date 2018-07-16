@@ -152,6 +152,34 @@ public class StudentMainActivity extends AppCompatActivity {
         setupUI();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        //Updating students current joined classes.
+        mDatabase = FirebaseDatabase.getInstance().getReference("information");
+        mDatabase.child("student").child(displayName).child("class").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                classList.clear();
+                for (DataSnapshot classSnapshot : dataSnapshot.getChildren()) {
+                    Class myClass = classSnapshot.getValue(Class.class);
+                    if(myClass != null) {
+                        classList.add(myClass);
+                        //Setting Adapter
+                        joinedClassAdapter = new JoinedClassAdapter(StudentMainActivity.this, classList);
+                        recyclerViewJoinedClass.setAdapter(joinedClassAdapter);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
     
     }
 }
