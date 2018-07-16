@@ -211,6 +211,55 @@ public class ClassesAddClass extends AppCompatActivity {
         }
     }
 
+    private void showProgressDialog() {
+        progressDialog.setMessage("saving...");
+        progressDialog.setCancelable(false);
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.show();
+    }
+
+    private void dismissProgressDialog() {
+        progressDialog.dismiss();
+    }
+
+    private void saveUserInformation() {
+        String accessCode = editTextAccessCode.getText().toString();
+        String className = editTextClassName.getText().toString();
+        String startDate = textViewStartdate.getText().toString();
+        String endDate = textViewEndDate.getText().toString();
+        String startTime = textViewStartTime.getText().toString();
+        String endTime = textViewEndTime.getText().toString();
+        List<String> weekDays = new ArrayList<>();
+
+        if(checkBoxSun.isChecked()) { weekDays.add("Sunday");}
+        if(checkBoxMon.isChecked()) { weekDays.add("Monday");}
+        if(checkBoxTues.isChecked()) { weekDays.add("Tuesday");}
+        if(checkBoxWed.isChecked()) { weekDays.add("Wednesday");}
+        if(checkBoxThurs.isChecked()) { weekDays.add("Thursday");}
+        if(checkBoxFri.isChecked()) { weekDays.add("Friday");}
+        if(checkBoxSat.isChecked()) { weekDays.add("Saturday");}
+
+        Class myClass = new Class(
+                accessCode,
+                className,
+                startDate,
+                endDate,
+                startTime,
+                endTime,
+                weekDays
+        );
+
+        mDatabase.child("class").child(accessCode).setValue(myClass);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                dismissProgressDialog();
+                Toast.makeText(getApplicationContext(), "Data saved successfully.", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        }, 300); // Millisecond 1000 = 1 sec
+    }
+
 
     }
 }
