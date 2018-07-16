@@ -48,5 +48,34 @@ public class ClassesAddClass extends AppCompatActivity {
     //Bundle
     Bundle bundle;
 
+     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_classes_add_class);
+
+        progressDialog = new ProgressDialog(this);
+
+        //Initializing Views
+        editTextAccessCode = (EditText) findViewById(R.id.editTextAccessCode) ;
+        editTextClassName = (EditText) findViewById(R.id.editTextClassName) ;
+
+        textViewStartdate = (TextView) findViewById(R.id.textViewStartDate);
+        textViewEndDate = (TextView) findViewById(R.id.textViewEndDate);
+
+        textViewStartTime = (TextView) findViewById(R.id.textViewStartTime);
+        textViewEndTime = (TextView) findViewById(R.id.textViewEndTime);
+
+        textViewAddClassTitle = (TextView) findViewById(R.id.textViewAddClassTitle);
+
+        buttonSave = (Button) findViewById(R.id.buttonSave);
+
+        checkBoxSun = (CheckBox) findViewById(R.id.checkBoxSun);
+        checkBoxMon = (CheckBox) findViewById(R.id.checkBoxMon);
+        checkBoxTues = (CheckBox) findViewById(R.id.checkBoxTues);
+        checkBoxWed = (CheckBox) findViewById(R.id.checkBoxWed);
+        checkBoxThurs = (CheckBox) findViewById(R.id.checkBoxThurs);
+        checkBoxFri = (CheckBox) findViewById(R.id.checkBoxFri);
+        checkBoxSat = (CheckBox) findViewById(R.id.checkBoxSat);
+
     }
 }
