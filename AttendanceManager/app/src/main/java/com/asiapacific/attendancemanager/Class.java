@@ -52,6 +52,33 @@ public class Class implements Serializable {
         return weekdays;
     }
 
+     public void setAccessCode(String accessCode) {
+        this.accessCode = accessCode;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public void setWeekdays(List<String> weekdays) {
+        this.weekdays = weekdays;
+
     
     }
 }
