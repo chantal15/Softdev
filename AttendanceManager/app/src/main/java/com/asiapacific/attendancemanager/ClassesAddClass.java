@@ -173,6 +173,44 @@ public class ClassesAddClass extends AppCompatActivity {
         }
     }
 
+     private void populateViews() {
+        editTextAccessCode.setText(bundle.getString("ACCESS_CODE"));
+        editTextClassName.setText(bundle.getString("CLASS_NAME"));
+        textViewStartdate.setText(bundle.getString("START_DATE"));
+        textViewEndDate.setText(bundle.getString("END_DATE"));
+        textViewStartTime.setText(bundle.getString("START_TIME"));
+        textViewEndTime.setText(bundle.getString("END_TIME"));
+
+        if(bundle.getSerializable("WEEKDAYS") != null) {
+            List<String> weekdays = (List <String>)bundle.getSerializable("WEEKDAYS");
+            for(int i = 0 ; i < weekdays.size() ; i++) {
+                switch (weekdays.get(i)) {
+                    case "Sunday":
+                        checkBoxSun.setChecked(true);
+                    break;
+                    case "Monday":
+                        checkBoxMon.setChecked(true);
+                    break;
+                        case "Tuesday":
+                        checkBoxTues.setChecked(true);
+                    break;
+                    case "Wednesday":
+                        checkBoxWed.setChecked(true);
+                    break;
+                    case "Thursday":
+                        checkBoxThurs.setChecked(true);
+                    break;
+                    case "Friday":
+                        checkBoxThurs.setChecked(true);
+                    break;
+                    case "Saturday":
+                        checkBoxSat.setChecked(true);
+                    break;
+                }
+            }
+        }
+    }
+
 
     }
 }
