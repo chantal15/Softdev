@@ -28,6 +28,7 @@ import java.util.List;
 
 public class ClassesAddClass extends AppCompatActivity {
 
-  
+   //Declaring DatePickerDialog on set listener for user interaction.
+    private DatePickerDialog.OnDateSetListener startDateSetListener, endDateSetListener;
     }
 }
