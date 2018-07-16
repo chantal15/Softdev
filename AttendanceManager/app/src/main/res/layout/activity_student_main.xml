@@ -48,6 +48,15 @@
                     android:textSize="12sp" />
             </LinearLayout>
 
-    
+    <TextView
+                android:id="@+id/textViewDisplayName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/muli_extrabold"
+                android:text="Chantal Saldivar"
+                android:textColor="@color/textPrimaryColor"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
