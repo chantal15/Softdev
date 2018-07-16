@@ -29,6 +29,15 @@ public class LoginProfessor extends AppCompatActivity {
 //        }
     }
 
+     //Incomplete
+    public boolean authenticated() {
+        if(editTextUsername.getText().equals("admin") && editTextPassword.getText().equals("admin")) {
+            Toast.makeText(this, editTextUsername.getText()+" "+editTextPassword.getText(), Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            return false;
+        }
+
  
     }
 }
