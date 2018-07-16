@@ -37,6 +37,23 @@
             android:textColor="@color/textSecondaryColor"
             android:textSize="16sp" />
 
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonCancel"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="30dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli_extrabold"
+                android:text="Cancel"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+
 
         </LinearLayout>
 
