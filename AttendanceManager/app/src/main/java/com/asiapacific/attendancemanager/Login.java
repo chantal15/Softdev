@@ -19,4 +19,10 @@ public class Login extends AppCompatActivity {
         startActivity(professorLoginIntent);
     }
 
+    public void openStudentLogin(View view) {
+        //This will open student's login page.
+        Intent studentLoginIntent = new Intent(this, LoginStudent.class);
+        startActivity(studentLoginIntent);
+    }
+
 }
