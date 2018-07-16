@@ -77,5 +77,14 @@ public class ClassesAddClass extends AppCompatActivity {
         checkBoxFri = (CheckBox) findViewById(R.id.checkBoxFri);
         checkBoxSat = (CheckBox) findViewById(R.id.checkBoxSat);
 
+         //Database
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        //Setting listener to "Select Date" button/label under "Start Date"
+        textViewStartdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
     }
 }
