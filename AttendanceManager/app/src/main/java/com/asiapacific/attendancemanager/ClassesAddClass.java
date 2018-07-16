@@ -91,6 +91,17 @@ public class ClassesAddClass extends AppCompatActivity {
                 int month = calendar.get(Calendar.MONTH);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
 
+                //Configuring DatePickerDialog.
+                DatePickerDialog dialog = new DatePickerDialog(
+                        ClassesAddClass.this,
+                        android.R.style.Theme_DeviceDefault_Light_Dialog_NoActionBar_MinWidth,
+                        startDateSetListener,
+                        year, month, day);
+//                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+
 
     }
 }
