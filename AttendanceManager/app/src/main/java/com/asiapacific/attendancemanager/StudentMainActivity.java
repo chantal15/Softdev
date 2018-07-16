@@ -76,6 +76,19 @@ public class StudentMainActivity extends AppCompatActivity {
             }
         }).addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions).build();
 
+        //Getting data from intent
+        bundle = getIntent().getExtras();
+
+        textViewJoinClass = (TextView) findViewById(R.id.textViewJoinClass);
+        textViewDisplayName = (TextView) findViewById(R.id.textViewDisplayName);
+        textViewSignOut = (TextView) findViewById(R.id.textViewSignOut);
+
+        recyclerViewJoinedClass = (RecyclerView) findViewById(R.id.recyclerViewJoinedClasses);
+        recyclerViewJoinedClass.setHasFixedSize(false);
+        recyclerViewJoinedClass.setLayoutManager(new LinearLayoutManager(this));
+
+        classList = new ArrayList<>();
+
     
     }
 }
