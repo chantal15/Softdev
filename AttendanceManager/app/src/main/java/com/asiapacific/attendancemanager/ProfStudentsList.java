@@ -32,6 +32,38 @@ public class ProfStudentsList extends AppCompatActivity {
     //Chosen access code
     String accessCode;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_prof_students_list);
+
+        //Initializing List
+        studentList = new ArrayList<>();
+
+        //Initializing Recycler View
+        studentRecyclerView = (RecyclerView) findViewById(R.id.recyclerViewStudents);
+        studentRecyclerView.setHasFixedSize(false);
+        studentRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //Initializing bundle content from an intent
+        bundle = getIntent().getExtras();
+
+//        addStudents();
+//        setupAdapter();
+    }
+
+    //Static data for testing purposes.
+//    private void addStudents() {
+//        studentList.add(new Student(
+//                "Chantal Saldivar",
+//                "chantalsaldivar@gmail.com",
+//                null,
+//                null
+//        ));
+//    }
+
+
+
 
     }
 }
