@@ -315,4 +315,19 @@
         </LinearLayout>
 
     </LinearLayout>
+
+     <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#00163f"
+        android:fontFamily="@font/muli_extrabold"
+        android:text="save"
+        android:textColor="@android:color/background_light"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+        
 </android.support.constraint.ConstraintLayout>
