@@ -40,6 +40,16 @@ public class FragmentProfClasses extends Fragment {
     //Firebase Database
     DatabaseReference databaseClass;
 
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //Inflates fragment xml file.
+         view = inflater.inflate(R.layout.fragment_prof_classes, null);
+
+         //Initialize Database Class from Firebase.
+         databaseClass = FirebaseDatabase.getInstance().getReference("class");
+
+         classList = new ArrayList<>();
     
     }
 
