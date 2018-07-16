@@ -13,6 +13,10 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
     }
 
-    
+    public void openProfessorLogin(View view) {
+        //This will open Professor's login page.
+        Intent professorLoginIntent = new Intent(this, LoginProfessor.class);
+        startActivity(professorLoginIntent);
+    }
 
 }
