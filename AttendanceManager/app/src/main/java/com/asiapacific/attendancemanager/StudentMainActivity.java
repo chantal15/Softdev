@@ -89,6 +89,49 @@ public class StudentMainActivity extends AppCompatActivity {
 
         classList = new ArrayList<>();
 
+        textViewJoinClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(StudentMainActivity.this);
+                View dialogView = getLayoutInflater().inflate(R.layout.dialog_join_class, null);
+
+                editTextAccessCode = (EditText) dialogView.findViewById(R.id.editTextAccessCode);
+
+                buttonJoin = (Button) dialogView.findViewById(R.id.buttonJoin);
+                buttonCancel = (Button) dialogView.findViewById(R.id.buttonCancel);
+
+                dialogBuilder.setView(dialogView);
+                final AlertDialog joinClassDialog = dialogBuilder.create();
+                joinClassDialog.show();
+
+                buttonJoin.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String accessCode = editTextAccessCode.getText().toString().trim();
+                        if(!accessCode.equals("") )
+                        {
+                            joinClass(accessCode);
+                            joinClassDialog.dismiss();
+                        }
+                        else
+                        {
+                            editTextAccessCode.setError("Required Field");
+                            editTextAccessCode.setFocusable(true);
+                        }
+
+                    }
+                });
+
+                buttonCancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        joinClassDialog.dismiss();
+                    }
+                });
+
+            }
+        });
+
     
     }
 }
