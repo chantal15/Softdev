@@ -37,7 +37,5 @@ public class LoginProfessor extends AppCompatActivity {
         } else {
             return false;
         }
-
- 
     }
 }
