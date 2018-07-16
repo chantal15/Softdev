@@ -124,6 +124,38 @@ public class ClassesAddClass extends AppCompatActivity {
             }
         });
 
+        textViewStartTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showStartTimePicker();
+            }
+        });
+
+        textViewEndTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showEndTimePicker();
+            }
+        });
+
+        startDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                String date = String.format("%s %d, %d",month(month), day, year);
+                //This will display the starting date of class.
+                textViewStartdate.setText(date);
+            }
+        };
+
+        endDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                String date = String.format("%s %d, %d",month(month), day, year);
+                //This will display the starting date of class.
+                textViewEndDate.setText(date);
+            }
+        };
+
 
     }
 }
