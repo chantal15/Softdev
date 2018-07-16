@@ -102,6 +102,11 @@ public class ClassesAddClass extends AppCompatActivity {
             }
         });
 
+        //Setting listener to "Select Date" button/label under "End Date"
+        textViewEndDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
 
     }
 }
