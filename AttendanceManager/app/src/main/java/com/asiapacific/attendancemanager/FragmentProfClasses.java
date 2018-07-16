@@ -50,6 +50,50 @@ public class FragmentProfClasses extends Fragment {
          databaseClass = FirebaseDatabase.getInstance().getReference("class");
 
          classList = new ArrayList<>();
+
+         classRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewClassList);
+         classRecyclerView.setHasFixedSize(false);
+         classRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
+        textViewAddClass = (TextView)view.findViewById(R.id.textViewAddClass);
+        textViewAddClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //This will open Add Class activity.
+                Intent intent = new Intent(view.getContext(), ClassesAddClass.class);
+                startActivity(intent);
+            }
+        });
+
+//        addClasses();
+
+        return view;
+    }
+
+     @Override
+    public void onStart() {
+        super.onStart();
+
+        //Updating datas realtime using Firebase technology.
+        databaseClass.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                classList.clear();
+                for (DataSnapshot classSnapshot : dataSnapshot.getChildren()) {
+                    Class myClass = classSnapshot.getValue(Class.class);
+                    if(myClass != null) {
+                        classList.add(myClass);
+                        //Setting Adapter
+                        classAdapter = new ClassAdapter(view.getContext(), classList);
+                        classRecyclerView.setAdapter(classAdapter);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     
     }
 
