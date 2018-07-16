@@ -287,6 +287,34 @@ public class ClassesAddClass extends AppCompatActivity {
         timePickerDialog.show();
     }
 
+    private void showStartTimePicker() {
+        final Calendar myCalender = Calendar.getInstance();
+        final int hour = myCalender.get(Calendar.HOUR_OF_DAY);
+        int minute = myCalender.get(Calendar.MINUTE);
+
+
+        TimePickerDialog.OnTimeSetListener myTimeListener = new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                if (view.isShown()) {
+                    int hour = hourOfDay % 12;
+                    if (hour == 0)
+                    {
+                        hour = 12;
+                        textViewStartTime.setText(String.format("%02d:%02d %s", hour, minute, hourOfDay < 12 ? "am" : "pm"));
+                    }
+                    else
+                    {
+                        textViewStartTime.setText(String.format("%02d:%02d %s", hour, minute,hourOfDay < 12 ? "am" : "pm"));
+                    }
+                }
+            }
+        };
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, android.R.style.Theme_DeviceDefault_Light_Dialog_MinWidth, myTimeListener, hour, minute, false);
+//        timePickerDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        timePickerDialog.show();
+    }
+
 
     }
 }
