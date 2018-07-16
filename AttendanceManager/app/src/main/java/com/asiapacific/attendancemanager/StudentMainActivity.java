@@ -180,6 +180,35 @@ public class StudentMainActivity extends AppCompatActivity {
         });
     }
 
+    private void getNumberOfStudents(){}
+
+    private void setupUI() {
+        textViewDisplayName.setText(displayName);
+    }
+
+    private void joinClass(final String accessCode) {
+        //Database
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child("information").child("class").child(accessCode).child(student.getDisplayName()).setValue(student);
+        mDatabase.child("class").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot classSnapshot : dataSnapshot.getChildren())
+                {
+                    if(classSnapshot.getKey().equals(accessCode))
+                    {
+                        Class myClass = classSnapshot.getValue(Class.class);
+                        mDatabase.child("information").child("student").child(displayName).child("class").child(accessCode).setValue(myClass);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     
     }
 }
