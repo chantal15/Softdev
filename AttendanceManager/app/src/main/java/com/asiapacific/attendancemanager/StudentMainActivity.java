@@ -63,6 +63,19 @@ public class StudentMainActivity extends AppCompatActivity {
     //Progress Dialog
     ProgressDialog progressDialog;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_student_main);
+
+        googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+        googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
+            @Override
+            public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+            }
+        }).addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions).build();
+
     
     }
 }
