@@ -94,11 +94,6 @@ public class ProfStudentsList extends AppCompatActivity {
     private void setupAdapter() {
         studentAdapter = new StudentAdapter(this, studentList);
         studentRecyclerView.setAdapter(studentAdapter);
-    }
-}
-
-
-
 
     }
 }
