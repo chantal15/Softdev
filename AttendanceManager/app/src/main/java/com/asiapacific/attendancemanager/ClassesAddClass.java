@@ -30,5 +30,13 @@ public class ClassesAddClass extends AppCompatActivity {
 
    //Declaring DatePickerDialog on set listener for user interaction.
     private DatePickerDialog.OnDateSetListener startDateSetListener, endDateSetListener;
+
+    //Declaring Views.
+    EditText editTextAccessCode, editTextClassName;
+    TextView textViewStartdate, textViewEndDate, textViewStartTime, textViewEndTime, textViewAddClassTitle;
+
+    Button buttonSave ;
+
+    CheckBox checkBoxSun, checkBoxMon, checkBoxTues, checkBoxWed, checkBoxThurs, checkBoxFri, checkBoxSat;
     }
 }
