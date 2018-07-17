@@ -42,6 +42,19 @@ public class JoinedClassAdapter extends RecyclerView.Adapter<JoinedClassAdapter.
 
     }
 
+     @Override
+    public int getItemCount() {
+        return classList.size();
+    }
+
+    public void clear() {
+        final int size = classList.size();
+        classList.clear();
+        notifyItemRangeRemoved(0, size);
+    }
+
+
+
         }
     }
 }
