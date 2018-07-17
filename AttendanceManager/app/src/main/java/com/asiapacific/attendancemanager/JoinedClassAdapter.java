@@ -24,6 +24,23 @@ public class JoinedClassAdapter extends RecyclerView.Adapter<JoinedClassAdapter.
         this.classList = classList;
     }
 
+    @Override
+    public JoinedClassViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.class_recycler_layout, parent, false);
+        JoinedClassViewHolder joinedClassViewHolder = new JoinedClassViewHolder(view);
+        return joinedClassViewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(JoinedClassViewHolder holder, int position) {
+        final Class myClass = classList.get(position);
+
+        holder.textViewClassName.setText(myClass.getClassName());
+        holder.textViewAccessCode.setText(myClass.getAccessCode());
+        holder.textViewTotalStudents.setText("");
+
+    }
 
         }
     }
