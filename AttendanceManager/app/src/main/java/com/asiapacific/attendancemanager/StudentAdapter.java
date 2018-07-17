@@ -26,7 +26,34 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         this.studentList = studentList;
     }
 
+@Override
+    public StudentViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.student_recycler_layout, parent, false);
+        StudentViewHolder studentViewHolder = new StudentViewHolder(view);
+        return studentViewHolder;
+    }
 
+    @Override
+    public void onBindViewHolder(StudentViewHolder holder, int position) {
+        final Student myStudent = studentList.get(position);
+
+          holder.textViewStudentName.setText(myStudent.getDisplayName());
+          holder.textViewStudentEmail.setText(myStudent.getEmail());
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return studentList.size();
+    }
+
+    public void clear() {
+        final int size = studentList.size();
+        studentList.clear();
+        notifyItemRangeRemoved(0, size);
+    }
+    
         }
     }
 }
