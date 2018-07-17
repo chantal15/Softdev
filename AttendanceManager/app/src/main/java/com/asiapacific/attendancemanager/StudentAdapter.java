@@ -53,7 +53,20 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         studentList.clear();
         notifyItemRangeRemoved(0, size);
     }
-    
+
+    public class StudentViewHolder extends RecyclerView.ViewHolder{
+
+        TextView textViewStudentName, textViewStudentEmail;
+
+        CardView cardViewContainer;
+
+        public StudentViewHolder(View itemView) {
+            super(itemView);
+
+            textViewStudentName = itemView.findViewById(R.id.textViewStudentName);
+            textViewStudentEmail = itemView.findViewById(R.id.textViewStudentEmail);
+
+            cardViewContainer = itemView.findViewById(R.id.cardViewContainer);
         }
     }
 }
