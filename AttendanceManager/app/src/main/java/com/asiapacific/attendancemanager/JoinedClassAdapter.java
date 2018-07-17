@@ -53,6 +53,21 @@ public class JoinedClassAdapter extends RecyclerView.Adapter<JoinedClassAdapter.
         notifyItemRangeRemoved(0, size);
     }
 
+    public class JoinedClassViewHolder extends RecyclerView.ViewHolder{
+
+        TextView textViewClassName, textViewAccessCode, textViewTotalStudents;
+
+        CardView cardViewContainer;
+
+        public JoinedClassViewHolder(View itemView) {
+            super(itemView);
+
+            textViewClassName = itemView.findViewById(R.id.textViewClassName);
+            textViewAccessCode = itemView.findViewById(R.id.textViewAccessCode);
+            textViewTotalStudents = itemView.findViewById(R.id.textViewSchedule);
+
+            cardViewContainer = itemView.findViewById(R.id.cardViewContainer);
+
 
 
         }
