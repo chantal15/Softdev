@@ -26,7 +26,8 @@
             android:name=".ProfMainActivity"
             android:label="@string/title_activity_prof_main" />
         <activity android:name=".ClassesAddClass" />
-        <activity android:name=".ProfStudentsList" />
+        <activity android:name=".ProfStudentsList"
+            android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".StudentMainActivity" />
         <activity android:name=".LoginStudent"></activity>
     </application>
