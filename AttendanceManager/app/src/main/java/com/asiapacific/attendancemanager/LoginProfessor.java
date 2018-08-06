@@ -32,5 +32,21 @@ public class LoginProfessor extends AppCompatActivity implements View.OnClickLis
     private final int REQ_CODE =  1001;
 
 
+
+     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login_professor);
+
+        signInButton = (SignInButton) findViewById(R.id.googleSignInButton);
+
+        signInButton.setOnClickListener(this);
+
+        googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+
+        googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this, this).addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions).build();
+    }
+
+
    
 }
