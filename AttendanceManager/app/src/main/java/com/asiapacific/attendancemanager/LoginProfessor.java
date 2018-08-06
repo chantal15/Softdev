@@ -61,6 +61,12 @@ public class LoginProfessor extends AppCompatActivity implements View.OnClickLis
         startActivityForResult(signInIntent, REQ_CODE);
     }
 
+    private void holdGoogleResult(GoogleSignInResult googleSignInResult) {
+        if(googleSignInResult.isSuccess()) {
+            GoogleSignInAccount googleAccount = googleSignInResult.getSignInAccount();
+            String name = googleAccount.getDisplayName();
+            String email = googleAccount.getEmail();
+
 
    
 }
