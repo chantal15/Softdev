@@ -56,6 +56,11 @@ public class LoginProfessor extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    private void signInToGoogle() {
+        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+        startActivityForResult(signInIntent, REQ_CODE);
+    }
+
 
    
 }
