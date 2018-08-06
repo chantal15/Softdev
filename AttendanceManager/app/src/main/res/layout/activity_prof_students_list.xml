@@ -85,7 +85,19 @@
                 android:fontFamily="@font/muli_bold"
                 android:text="Students"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="14sp" />                
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textViewTotalStudents"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli_bold"
+                android:text="Total:"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/textSecondaryColor" />
+
+
 
 
 </android.support.constraint.ConstraintLayout>
