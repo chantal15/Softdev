@@ -23,6 +23,11 @@ public class LoginProfessor extends AppCompatActivity implements View.OnClickLis
     //Declaring Google API Client for Google Sign In Service
     private GoogleApiClient googleApiClient;
 
+    private GoogleSignInOptions googleSignInOptions;
+
+    //Declaring Google Sign In Button
+    private SignInButton signInButton;
+
 
    
 }
