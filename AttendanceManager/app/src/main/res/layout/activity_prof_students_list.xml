@@ -75,7 +75,17 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_weight="1"
-            android:orientation="horizontal">                
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli_bold"
+                android:text="Students"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />                
 
 
 </android.support.constraint.ConstraintLayout>
