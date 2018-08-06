@@ -20,5 +20,9 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 public class LoginProfessor extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener{
 
+    //Declaring Google API Client for Google Sign In Service
+    private GoogleApiClient googleApiClient;
+
+
    
 }
