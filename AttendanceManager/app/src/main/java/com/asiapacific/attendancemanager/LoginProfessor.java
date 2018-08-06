@@ -47,6 +47,15 @@ public class LoginProfessor extends AppCompatActivity implements View.OnClickLis
         googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this, this).addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions).build();
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.googleSignInButton:
+                signInToGoogle();
+                break;
+        }
+    }
+
 
    
 }
