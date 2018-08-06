@@ -1,6 +1,7 @@
 package com.asiapacific.attendancemanager;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -85,4 +86,11 @@ public class LoginStudent extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    //Override back button.
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, Login.class));
+        finish();
+    }
+    
 }
