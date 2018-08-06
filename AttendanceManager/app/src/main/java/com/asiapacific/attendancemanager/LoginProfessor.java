@@ -20,32 +20,5 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 public class LoginProfessor extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener{
 
-    EditText editTextUsername, editTextPassword;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_professor);
-
-        editTextUsername = (EditText) findViewById(R.id.editTextUsername);
-        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-    }
-
-    public void goToMainActivity(View view) {
-//        if(authenticated()) {
-            //This will open Professor's activity activity.
-            Intent intent = new Intent(this, ProfMainActivity.class);
-            startActivity(intent);
-//        }
-    }
-
-     //Incomplete
-    public boolean authenticated() {
-        if(editTextUsername.getText().equals("admin") && editTextPassword.getText().equals("admin")) {
-            Toast.makeText(this, editTextUsername.getText()+" "+editTextPassword.getText(), Toast.LENGTH_SHORT).show();
-            return true;
-        } else {
-            return false;
-        }
-    }
+   
 }
