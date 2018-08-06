@@ -87,6 +87,14 @@ public class ClassesAddClass extends AppCompatActivity {
         checkBoxFri = (CheckBox) findViewById(R.id.checkBoxFri);
         checkBoxSat = (CheckBox) findViewById(R.id.checkBoxSat);
 
+        imageViewDelete = (ImageView) findViewById(R.id.imageViewDelete);
+        imageViewDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteClass();
+            }
+        });
+
          //Database
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -181,6 +189,46 @@ public class ClassesAddClass extends AppCompatActivity {
         } else {
             textViewAddClassTitle.setText("Add Class");
         }
+    }
+
+    SharedPreferences sharedPreferencesProfessorGoogleInfo = getSharedPreferences("AMS_PREFERENCE",MODE_PRIVATE);
+        professorsName = sharedPreferencesProfessorGoogleInfo.getString("NAME",null);
+        professorsEmail = sharedPreferencesProfessorGoogleInfo.getString("EMAIL",null).replace("."," ");
+    }
+
+    private void deleteClass() {
+        //Access Classes Node
+        final String accessCode = bundle.getString("ACCESS_CODE");
+        mDatabase.child("Classes").child(accessCode).removeValue();
+        mDatabase.child("Professors").child(professorsEmail).child("Classes").child(accessCode).removeValue();
+        Query retrieveClasses = mDatabase.child("Students");
+        retrieveClasses.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot studentSnapShot : dataSnapshot.getChildren()) {
+                    String student = studentSnapShot.getKey();
+                    for(DataSnapshot nodeSnapShot : studentSnapShot.getChildren()) {
+                        String node = nodeSnapShot.getKey();
+                        if(node.equals("Classes")) {
+                            for(DataSnapshot classSnapShot : nodeSnapShot.getChildren()) {
+                                String tempAccessCode = classSnapShot.getKey();
+                                if(tempAccessCode.equals(accessCode)) {
+                                    mDatabase.child("Students").child(student).child("Classes").child(accessCode).removeValue();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        Toast.makeText(this, "Deleted successfully.",Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, ProfMainActivity.class));
+        finish();
     }
 
      private void populateViews() {
