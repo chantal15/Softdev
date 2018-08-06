@@ -67,6 +67,19 @@ public class LoginProfessor extends AppCompatActivity implements View.OnClickLis
             String name = googleAccount.getDisplayName();
             String email = googleAccount.getEmail();
 
+             //Initializing shared preferences that will use for storing professors information.
+            SharedPreferences.Editor sharedPreferencesProfessorGoogleInfo = getSharedPreferences("AMS_PREFERENCE",MODE_PRIVATE).edit();
+
+            sharedPreferencesProfessorGoogleInfo.putString("NAME", name);
+            sharedPreferencesProfessorGoogleInfo.putString("EMAIL", email);
+            sharedPreferencesProfessorGoogleInfo.apply();
+
+            Intent intent = new Intent(this, ProfMainActivity.class);
+
+            startActivity(intent);
+        }
+    }
+
 
    
 }
