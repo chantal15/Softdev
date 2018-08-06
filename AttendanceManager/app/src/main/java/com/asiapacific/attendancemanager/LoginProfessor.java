@@ -28,6 +28,9 @@ public class LoginProfessor extends AppCompatActivity implements View.OnClickLis
     //Declaring Google Sign In Button
     private SignInButton signInButton;
 
+    //Request code for API Client
+    private final int REQ_CODE =  1001;
+
 
    
 }
