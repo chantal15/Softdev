@@ -95,6 +95,10 @@ public class LoginProfessor extends AppCompatActivity implements View.OnClickLis
 
     }
 
-
-   
+    //Override back button.
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, Login.class));
+        finish();
+    }
 }
