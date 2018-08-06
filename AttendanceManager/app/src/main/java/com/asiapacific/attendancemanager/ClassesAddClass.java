@@ -270,7 +270,7 @@ public class ClassesAddClass extends AppCompatActivity {
     }
 
     private void showProgressDialog() {
-        progressDialog.setMessage("saving...");
+        progressDialog.setMessage("Saving data...");
         progressDialog.setCancelable(false);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
@@ -281,7 +281,9 @@ public class ClassesAddClass extends AppCompatActivity {
     }
 
     private void saveUserInformation() {
-        String accessCode = editTextAccessCode.getText().toString();
+        Query retrieveClasses = mDatabase.child("Classes");
+
+        final String accessCode = editTextAccessCode.getText().toString();
         String className = editTextClassName.getText().toString();
         String startDate = textViewStartdate.getText().toString();
         String endDate = textViewEndDate.getText().toString();
@@ -297,7 +299,7 @@ public class ClassesAddClass extends AppCompatActivity {
         if(checkBoxFri.isChecked()) { weekDays.add("Friday");}
         if(checkBoxSat.isChecked()) { weekDays.add("Saturday");}
 
-        Class myClass = new Class(
+        final Class myClass = new Class(
                 accessCode,
                 className,
                 startDate,
@@ -306,16 +308,47 @@ public class ClassesAddClass extends AppCompatActivity {
                 endTime,
                 weekDays
         );
-
-        mDatabase.child("class").child(accessCode).setValue(myClass);
-        new Handler().postDelayed(new Runnable() {
+        retrieveClasses.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void run() {
-                dismissProgressDialog();
-                Toast.makeText(getApplicationContext(), "Data saved successfully.", Toast.LENGTH_SHORT).show();
-                finish();
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                boolean exists = false;
+                for (DataSnapshot classSnapShot : dataSnapshot.getChildren()) {
+                    //Check if class is already exists.
+                    String tempAccessCode = classSnapShot.getKey();
+                    if(accessCode.equals(tempAccessCode)){
+                        exists = true;
+                    }
+                }
+                //If existing
+                if(exists) {
+                    showMessage("Class already exists!");
+                    dismissProgressDialog();
+
+                } else {
+                    //Professors Node - Adding information of professor
+                    mDatabase.child("Professors").child(professorsEmail).child("Information").setValue(new Professor(professorsName, professorsEmail));
+                    //Adding class to professor node.
+                    mDatabase.child("Professors").child(professorsEmail).child("Classes").child(accessCode).setValue(myClass);
+                    //Classes Node
+                    mDatabase.child("Classes").child(accessCode).child("Information").setValue(myClass);
+                    //Setting initial number of students
+                    mDatabase.child("Classes").child(accessCode).child("Students").child("totalStudents").setValue(0);
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            dismissProgressDialog();
+                            Toast.makeText(getApplicationContext(), "Data saved successfully.", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    }, 300); // Millisecond 1000 = 1 sec
+                }
             }
-        }, 300); // Millisecond 1000 = 1 sec
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void showEndTimePicker() {
@@ -419,5 +452,7 @@ public class ClassesAddClass extends AppCompatActivity {
         return month;
 
 
+        public void showMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 }
