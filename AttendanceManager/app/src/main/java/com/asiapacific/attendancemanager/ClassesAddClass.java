@@ -55,6 +55,9 @@ public class ClassesAddClass extends AppCompatActivity {
     //Bundle
     Bundle bundle;
 
+    String professorsEmail;
+    String professorsName;
+
      @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
