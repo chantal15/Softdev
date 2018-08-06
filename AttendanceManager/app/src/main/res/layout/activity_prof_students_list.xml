@@ -30,5 +30,21 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/textViewClassName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/muli_extrabold"
+                    android:text="SOFTDEV"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="24sp"
+                    tools:layout_editor_absoluteX="27dp"
+                    tools:layout_editor_absoluteY="27dp"
+                    tools:text="SOFTDEV" />
+            </LinearLayout>
+
+        </LinearLayout>                
+
 
 </android.support.constraint.ConstraintLayout>
