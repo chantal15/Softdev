@@ -168,6 +168,16 @@
 
                     </LinearLayout>
 
+                 </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -175,7 +185,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/textView54"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/muli_extrabold"
@@ -409,6 +419,9 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
 
      <Button
         android:id="@+id/buttonSave"
