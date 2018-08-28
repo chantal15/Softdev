@@ -306,6 +306,8 @@ public class ClassesAddClass extends AppCompatActivity {
         String className = editTextClassName.getText().toString();
         String startDate = textViewStartdate.getText().toString();
         String endDate = textViewEndDate.getText().toString();
+        String room = editTextRoom.getText().toString();
+        String section = editTextSection.getText().toString();
         String startTime = textViewStartTime.getText().toString();
         String endTime = textViewEndTime.getText().toString();
         List<String> weekDays = new ArrayList<>();
