@@ -102,6 +102,11 @@ public class ClassesAddClass extends AppCompatActivity {
             }
         });
 
+        spinnerSY = (Spinner) findViewById(R.id.spinner_sy);
+        spinnerSYAdapter = ArrayAdapter.createFromResource(this, R.array.sy, android.R.layout.simple_list_item_1);
+        spinnerSYAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerSY.setAdapter(spinnerSYAdapter);
+
          //Database
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
