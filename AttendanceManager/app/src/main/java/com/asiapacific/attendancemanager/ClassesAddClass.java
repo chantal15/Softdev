@@ -383,6 +383,15 @@ public class ClassesAddClass extends AppCompatActivity {
         });
     }
 
+    private boolean validated(String className, String startDate, String endDate, String room, String section) {
+        if(className != null && !startDate.equals("Start Date") && !endDate.equals("End Date") && room != null && section != null ) {
+            return true;
+        } else {
+            showMessage("Fields should not be empty");
+            return false;
+        }
+    }   
+
     private void showEndTimePicker() {
         final Calendar myCalender = Calendar.getInstance();
         final int hour = myCalender.get(Calendar.HOUR_OF_DAY);
