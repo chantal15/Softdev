@@ -327,10 +327,16 @@ public class ClassesAddClass extends AppCompatActivity {
                 className,
                 startDate,
                 endDate,
+                room,
+                section,
+                sy,
+                semester,
                 startTime,
                 endTime,
                 weekDays
         );
+        if(validated(className, startDate, endDate, room, section)) {
+            showProgressDialog();
         retrieveClasses.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -352,6 +358,9 @@ public class ClassesAddClass extends AppCompatActivity {
                     mDatabase.child("Professors").child(professorsEmail).child("Information").setValue(new Professor(professorsName, professorsEmail));
                     //Adding class to professor node.
                     mDatabase.child("Professors").child(professorsEmail).child("Classes").child(accessCode).setValue(myClass);
+                        for(String weekday : weekDays) {
+                            //Adding to attendance node
+                            mDatabase.child("Attendance").child(professorsEmail).child("Classes").child(weekday).child(accessCode).child("Information").setValue(myClass);
                     //Classes Node
                     mDatabase.child("Classes").child(accessCode).child("Information").setValue(myClass);
                     //Setting initial number of students
