@@ -50,7 +50,7 @@ public class ClassesAddClass extends AppCompatActivity {
 
     //Array for spinners
     ArrayAdapter spinnerSYAdapter, spinnerSemesterAdapter;
-    
+
     //Firebase Database Instance
     DatabaseReference mDatabase;
 
@@ -73,6 +73,8 @@ public class ClassesAddClass extends AppCompatActivity {
         //Initializing Views
         editTextAccessCode = (EditText) findViewById(R.id.editTextAccessCode) ;
         editTextClassName = (EditText) findViewById(R.id.editTextClassName) ;
+        editTextRoom = (EditText) findViewById(R.id.editText_room);
+        editTextSection = (EditText) findViewById(R.id.editText_section);
 
         textViewStartdate = (TextView) findViewById(R.id.textViewStartDate);
         textViewEndDate = (TextView) findViewById(R.id.textViewEndDate);
