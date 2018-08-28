@@ -252,6 +252,8 @@ public class ClassesAddClass extends AppCompatActivity {
         editTextAccessCode.setText(bundle.getString("ACCESS_CODE"));
         editTextClassName.setText(bundle.getString("CLASS_NAME"));
         textViewStartdate.setText(bundle.getString("START_DATE"));
+        editTextRoom.setText(bundle.getString("ROOM"));
+        editTextSection.setText(bundle.getString("SECTION"));
         textViewEndDate.setText(bundle.getString("END_DATE"));
         textViewStartTime.setText(bundle.getString("START_TIME"));
         textViewEndTime.setText(bundle.getString("END_TIME"));
