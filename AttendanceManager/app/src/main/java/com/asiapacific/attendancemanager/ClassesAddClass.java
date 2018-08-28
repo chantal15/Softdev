@@ -308,6 +308,8 @@ public class ClassesAddClass extends AppCompatActivity {
         String endDate = textViewEndDate.getText().toString();
         String room = editTextRoom.getText().toString();
         String section = editTextSection.getText().toString();
+        String sy = spinnerSY.getSelectedItem().toString();
+        String semester = spinnerSemester.getSelectedItem().toString();
         String startTime = textViewStartTime.getText().toString();
         String endTime = textViewEndTime.getText().toString();
         List<String> weekDays = new ArrayList<>();
