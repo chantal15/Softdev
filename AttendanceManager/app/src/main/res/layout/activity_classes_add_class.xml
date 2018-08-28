@@ -102,6 +102,16 @@
                 android:hint="Room"
                 android:inputType="textCapSentences" />
 
+            <EditText
+                        android:id="@+id/editText_section"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Section"
+                        android:inputType="textCapSentences" />
+                </LinearLayout>
+
 
 
             <LinearLayout
