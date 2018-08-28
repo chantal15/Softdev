@@ -217,7 +217,16 @@ public class ClassesAddClass extends AppCompatActivity {
         //Access Classes Node
         final String accessCode = bundle.getString("ACCESS_CODE");
         mDatabase.child("Classes").child(accessCode).removeValue();
+        //Removing to attendance node
+         mDatabase.child("Attendance").child(professorsEmail).child("Classes").child("Sunday").child(accessCode).removeValue();
+        mDatabase.child("Attendance").child(professorsEmail).child("Classes").child("Monday").child(accessCode).removeValue();
+        mDatabase.child("Attendance").child(professorsEmail).child("Classes").child("Tuesday").child(accessCode).removeValue();
+        mDatabase.child("Attendance").child(professorsEmail).child("Classes").child("Wednesday").child(accessCode).removeValue();
+        mDatabase.child("Attendance").child(professorsEmail).child("Classes").child("Thursday").child(accessCode).removeValue();
+        mDatabase.child("Attendance").child(professorsEmail).child("Classes").child("Friday").child(accessCode).removeValue();
+        mDatabase.child("Attendance").child(professorsEmail).child("Classes").child("Saturday").child(accessCode).removeValue();
         mDatabase.child("Professors").child(professorsEmail).child("Classes").child(accessCode).removeValue();
+        
         Query retrieveClasses = mDatabase.child("Students");
         retrieveClasses.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
