@@ -47,6 +47,10 @@ public class ClassesAddClass extends AppCompatActivity {
     ImageView imageViewDelete;
     CheckBox checkBoxSun, checkBoxMon, checkBoxTues, checkBoxWed, checkBoxThurs, checkBoxFri, checkBoxSat;
     Spinner spinnerSY, spinnerSemester;
+
+    //Array for spinners
+    ArrayAdapter spinnerSYAdapter, spinnerSemesterAdapter;
+    
     //Firebase Database Instance
     DatabaseReference mDatabase;
 
