@@ -41,13 +41,12 @@ public class ClassesAddClass extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener startDateSetListener, endDateSetListener;
 
     //Declaring Views.
-    EditText editTextAccessCode, editTextClassName;
+    EditText editTextAccessCode, editTextClassName, editTextRoom, editTextSection;
     TextView textViewStartdate, textViewEndDate, textViewStartTime, textViewEndTime, textViewAddClassTitle;
-
     Button buttonSave ;
-
+    ImageView imageViewDelete;
     CheckBox checkBoxSun, checkBoxMon, checkBoxTues, checkBoxWed, checkBoxThurs, checkBoxFri, checkBoxSat;
-
+    Spinner spinnerSY, spinnerSemester;
     //Firebase Database Instance
     DatabaseReference mDatabase;
 
