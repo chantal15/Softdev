@@ -106,6 +106,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
 
         CardView cardViewContainer;
 
+        RadioButton radioButtonPresent, radioButtonLate, radioButtonAbsent;
+
         public StudentViewHolder(View itemView) {
             super(itemView);
 
@@ -113,6 +115,10 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
             textViewStudentEmail = itemView.findViewById(R.id.textViewStudentEmail);
 
             cardViewContainer = itemView.findViewById(R.id.cardViewContainer);
+
+            radioButtonPresent = itemView.findViewById(R.id.radioButtonPresent);
+            radioButtonLate = itemView.findViewById(R.id.radioButtonLate);
+            radioButtonAbsent = itemView.findViewById(R.id.radioButtonAbsent);
         }
     }
 }
