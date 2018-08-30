@@ -33,5 +33,13 @@ public class ProfAttendanceStudentsList extends AppCompatActivity {
     StudentAdapter studentAdapter;
     TextView textViewClassName, textViewTotalStudents ;
 
+ 	//Student List object
+    List<Student> studentList;
+
+    //Firebase Database
+    DatabaseReference mDatabase;
+
+    //Bundle
+    Bundle bundle;
 
 	}
