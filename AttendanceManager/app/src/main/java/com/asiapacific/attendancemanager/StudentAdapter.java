@@ -24,10 +24,12 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
 
     private Context context;
     private List<Student> studentList;
+    private String activity;
 
-    public StudentAdapter(Context context, List<Student> studentList) {
+    public StudentAdapter(Context context, List<Student> studentList, String activity) {
         this.context = context;
         this.studentList = studentList;
+        this.activity = activity;
     }
 
 @Override
