@@ -96,6 +96,10 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         notifyItemRangeRemoved(0, size);
     }
 
+    private void showMessage(String message){
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+    }
+
     public class StudentViewHolder extends RecyclerView.ViewHolder{
 
         TextView textViewStudentName, textViewStudentEmail;
