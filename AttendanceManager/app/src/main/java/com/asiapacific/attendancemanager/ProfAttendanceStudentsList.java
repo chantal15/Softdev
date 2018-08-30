@@ -42,4 +42,16 @@ public class ProfAttendanceStudentsList extends AppCompatActivity {
     //Bundle
     Bundle bundle;
 
+    //Chosen access code
+    String accessCode;
+
+    //Progress Dialog
+    ProgressDialog progressDialog;
+
+    String professorsEmail;
+    String professorsName;
+
+    Button buttonRecord;
+
+
 	}
