@@ -32,6 +32,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         this.activity = activity;
     }
 
+     public StudentAdapter(){}
+
 @Override
     public StudentViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
@@ -43,9 +45,43 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     @Override
     public void onBindViewHolder(StudentViewHolder holder, int position) {
         final Student myStudent = studentList.get(position);
+        List<AttendanceStudent> attendanceStudents = new ArrayList<>();
 
           holder.textViewStudentName.setText(myStudent.getDisplayName());
           holder.textViewStudentEmail.setText(myStudent.getEmail());
+
+    }
+
+    if(activity.equals("Attendance")) {
+              holder.radioButtonPresent.setVisibility(View.VISIBLE);
+              holder.radioButtonPresent.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View view) {
+//                      tinyDB.putListObject(););
+                  }
+              });
+
+              holder.radioButtonLate.setVisibility(View.VISIBLE);
+              holder.radioButtonLate.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View view) {
+                      tinyDB.putObject(myStudent.getDisplayName(), new AttendanceStudent(myStudent.getDisplayName() , "No", "Yes", "No"));
+                  }
+              });
+
+              holder.radioButtonAbsent.setVisibility(View.VISIBLE);
+              holder.radioButtonAbsent.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View view) {
+                      tinyDB.putObject(myStudent.getDisplayName(), new AttendanceStudent(myStudent.getDisplayName() , "No", "No", "Yes"));
+                  }
+              });
+
+          } else {
+              holder.radioButtonPresent.setVisibility(View.GONE);
+              holder.radioButtonLate.setVisibility(View.GONE);
+              holder.radioButtonAbsent.setVisibility(View.GONE);
+          }
 
     }
 
