@@ -26,3 +26,12 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+
+public class ProfAttendanceStudentsList extends AppCompatActivity {
+	//Declaring Views
+    RecyclerView studentRecyclerView;
+    StudentAdapter studentAdapter;
+    TextView textViewClassName, textViewTotalStudents ;
+
+
+	}
